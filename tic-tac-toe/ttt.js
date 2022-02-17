@@ -51,10 +51,11 @@ const displayController = (() => {
       counter++;
     }
   };
-  return { update, render };
+  return { render };
 })();
 gameBoard.build();
 gameBoard.update("X", 0, 2);
 displayController.render();
 gameBoard.update("O", 2, 1);
 gameBoard.update("X", 0, 1);
+console.log(gameBoard.board_arr);
