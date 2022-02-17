@@ -27,8 +27,12 @@ const gameBoard = (() => {
     }
   };
 
+  const update = (symbol, row_index, column_index) => {
+    board_arr[row_index][column_index] = symbol;
+  };
+
   const add = (symbol, index) => (board_arr[index] = symbol);
-  return { board_arr, add, build };
+  return { board_arr, add, build, update };
 })();
 
 const Player = (p_name, symbol) => {
@@ -38,10 +42,6 @@ const Player = (p_name, symbol) => {
 };
 
 const displayController = (() => {
-  const update = (symbol, row_index, column_index) => {
-    gameBoard.board_arr[row_index][column_index] = symbol;
-    console.log(gameBoard.board_arr);
-  };
   const render = () => {
     board_content = gameBoard.board_arr.flat();
     tiles = document.getElementsByTagName("td");
@@ -54,7 +54,7 @@ const displayController = (() => {
   return { update, render };
 })();
 gameBoard.build();
-displayController.update("X", 0, 2);
+gameBoard.update("X", 0, 2);
 displayController.render();
-displayController.update("O", 2, 1);
-displayController.update("X", 0, 1);
+gameBoard.update("O", 2, 1);
+gameBoard.update("X", 0, 1);
