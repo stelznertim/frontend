@@ -1,0 +1,61 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="books.css" />
+    <script src="books.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="books">
+      <table id="book_table">
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Pages</th>
+        </tr>
+      </table>
+      <button onclick="openForm()" class="btn">NEW BOOK</button>
+      <div class="form-popup" id="myForm">
+        <form class="form-container">
+          <h1>Login</h1>
+
+          <label for="name"><b>Book name</b></label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter Book name"
+            name="name"
+            required
+          />
+
+          <label for="author"><b>Author</b></label>
+          <input
+            id="author"
+            type="text"
+            placeholder="Enter Author"
+            name="author"
+            required
+          />
+
+          <label for="pages"><b>Pages</b></label>
+          <input
+            id="pages"
+            type="text"
+            placeholder="Enter pages"
+            name="pages"
+            required
+          />
+
+          <button type="button" class="btn" onclick="submitBook()">
+            Submit
+          </button>
+          <button type="button" class="btn cancel" onclick="closeForm()">
+            Close
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
