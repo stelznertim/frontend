@@ -1,0 +1,30 @@
+.board-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+table {
+  align-self: center;
+  border: 2px solid;
+  border-collapse: collapse;
+  display: grid;
+  text-align: center;
+}
+
+td {
+  height: 100px;
+  width: 100px;
+  border: 2px solid;
+}
+
+button {
+  height: 100%;
+  width: 100%;
+  background-color: aliceblue;
+  padding: 0;
+  border: 0;
+}
+button:hover {
+  background-color: rgb(215, 255, 255);
+}
