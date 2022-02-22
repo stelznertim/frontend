@@ -1,20 +1,30 @@
+const Player = (p_name, symbol) => {
+  return { p_name, symbol };
+};
+
+const GameSetup = (() => {
+  const initialize = () => {
+    StateHandler.setActivePlayer(tim);
+    window.alert("Game starts");
+  };
+  return { initialize };
+})();
+
 const gameBoard = (() => {
   board = document.getElementsByClassName("board-container")[0];
   board_table = document.getElementsByTagName("table")[0];
 
-  const board_arr = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const board_arr = ["", "", "", "", "", "", "", "", ""];
 
-  const update = (symbol, index) => {
-    board_arr[index] = symbol;
-    console.log("Invoked button");
+  const update = (index) => {
+    board_arr[index] = StateHandler.getActivePlayer().symbol;
+    displayController.render();
+    if (StateHandler.getActivePlayer() == tim) {
+      StateHandler.setActivePlayer(megz);
+    } else StateHandler.setActivePlayer(tim);
   };
-
   return { board_arr, update };
 })();
-
-const Player = (p_name, symbol) => {
-  return { p_name, symbol };
-};
 
 const displayController = (() => {
   const render = () => {
@@ -35,13 +45,14 @@ const StateHandler = (() => {
   return { setActivePlayer, getActivePlayer };
 })();
 
-const GameSetup = (() => {
-  const initialize = () => {
-    const Tim = Player("Tim", "X");
-    const Megz = Player("Megz", "O");
-    StateHandler.setActivePlayer(Tim);
-    window.alert("Game starts");
-  };
-  return { initialize };
-})();
+const tim = Player("Tim", "X");
+const megz = Player("Megz", "O");
 GameSetup.initialize();
+
+const buttons = document.getElementsByClassName("table-button");
+console.log(buttons);
+Array.from(buttons).forEach((element) => {
+  element.addEventListener("click", function () {
+    element.disabled = true;
+  });
+});
