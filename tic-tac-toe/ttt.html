@@ -10,83 +10,88 @@
     <title>Tik-Tok-Toe</title>
   </head>
   <body>
-    <div class="activePlayer-container">
-      <textarea name="activePlayer" cols="30" rows="10">
- CurrentPlayer:</textarea
-      >
-    </div>
-    <div class="board-container">
-      <table>
-        <tr>
-          <td>
-            <button
-              class="table-button"
-              id="0"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-          <td>
-            <button
-              class="table-button"
-              id="1"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-          <td>
-            <button
-              class="table-button"
-              id="2"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button
-              class="table-button"
-              id="3"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-          <td>
-            <button
-              class="table-button"
-              id="4"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-          <td>
-            <button
-              class="table-button"
-              id="5"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button
-              class="table-button"
-              id="6"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-          <td>
-            <button
-              class="table-button"
-              id="7"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-          <td>
-            <button
-              class="table-button"
-              id="8"
-              onclick="gameBoard.update(this.id)"
-            ></button>
-          </td>
-        </tr>
-      </table>
+    <div class="container">
+      <div class="activePlayer-container">
+        <p>Active Player: <span id="active-player">Tim (X)</span></p>
+      </div>
+      <div class="board-container">
+        <table>
+          <tr>
+            <td>
+              <button
+                class="table-button"
+                id="0"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+            <td>
+              <button
+                class="table-button"
+                id="1"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+            <td>
+              <button
+                class="table-button"
+                id="2"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                class="table-button"
+                id="3"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+            <td>
+              <button
+                class="table-button"
+                id="4"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+            <td>
+              <button
+                class="table-button"
+                id="5"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                class="table-button"
+                id="6"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+            <td>
+              <button
+                class="table-button"
+                id="7"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+            <td>
+              <button
+                class="table-button"
+                id="8"
+                onclick="gameBoard.update(this.id)"
+              ></button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="restart-container">
+        <button onclick="gameStateHandler.restart()" class="restart-button">
+          Restart Game
+        </button>
+      </div>
     </div>
   </body>
 </html>
